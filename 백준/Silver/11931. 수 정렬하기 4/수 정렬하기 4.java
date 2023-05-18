@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -21,10 +20,7 @@ public class Main {
         }
         
         for (int i=numList.length-1; i >= 0; i--) {
-            if (numList[i] > 0 && i >= 100000) {
-                bw.write((i-1000000) + "\n");
-                numList[i++]--;
-            } else if (numList[i] > 0 && i < 100000) {
+            if (numList[i] > 0) {
                 bw.write((i-1000000) + "\n");
                 numList[i++]--;
             }
