@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,10 +21,7 @@ public class Main {
         
         // 비내림차순 정렬 arr[k] <= arr[k+1] 
         for (int i=0; i < numList.length; i++) {
-            if (numList[i] > 0 && i >= 100000) {
-                bw.write((i-1000000) + "\n");
-                numList[i--]--;
-            } else if (numList[i] > 0 && i < 100000) {
+            if (numList[i] > 0) {
                 bw.write((i-1000000) + "\n");
                 numList[i--]--;
             }
