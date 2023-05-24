@@ -23,8 +23,7 @@ public class Main {
             arr[i] = br.readLine();
         }
         
-        // 1. 길이 순 정렬
-        Arrays.sort(arr, (s1, s2) -> s1.length() - s2.length());
+        // Arrays.sort(arr, (s1, s2) -> s1.length() - s2.length());
         Arrays.sort(arr);
         
         Arrays.sort(arr, (s1, s2) -> 
