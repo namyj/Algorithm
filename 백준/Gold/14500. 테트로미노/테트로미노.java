@@ -62,13 +62,6 @@ public class Main {
                 sum += arr[poly[i][0]][poly[i][1]];
             }
             
-            // if (max < sum) {
-            //     System.out.print("sum : " + sum + " poly: ");
-            //     for (int i=0; i<poly.length; i++) {
-            //         System.out.print(Arrays.toString(poly[i]) + " ");
-            //     }
-            //     System.out.println();
-            // }
             max = Math.max(sum, max);
             return;
         }
@@ -86,20 +79,9 @@ public class Main {
             poly[k] = new int[]{cx, cy};
             bfs(cx, cy, k + 1);
             
-            // 인접한 칸 하나 더 선택하는 경우
+            // (x,y)에 인접한 칸 하나 더 선택하는 경우
             if (k < 3) {
-                for (int j=0; j<4; j++) {
-                    int nx = x + pos[j][0];
-                    int ny = y + pos[j][1];
-                    
-                    if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-                    if (visited[nx][ny]) continue;
-                    
-                    visited[nx][ny] = true;
-                    poly[k+1] = new int[]{nx, ny};
-                    bfs(nx, ny, k + 2);
-                    visited[nx][ny] = false;
-                }
+                bfs(x, y, k+1);
             }
             
             visited[cx][cy] = false;
